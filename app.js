@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('./database');
 
 const indexRouter = require('./routes/index');
 const websitesRouter = require('./routes/websites');

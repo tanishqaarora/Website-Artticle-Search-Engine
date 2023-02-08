@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const Website = require('../models/website');
+
 /* GET websites listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -16,12 +18,12 @@ router.post('/add', function(req, res, next) {
   website.url = req.body.url;
   website.description = req.body.description;
 
-  website.addWebsite(website, function(err, website) {
+  Website.addWebsite(website, function(err, website) {
     if(err) {
-      console.log(err);
-      res.send(err);
+      console.log("getting an error...", err);
+      // return res.send(err);
     }
-    res.redirect("/");
+    return res.redirect("/");
   });
 });
 
