@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Website = require('../models/website');
+Website = require('../models/website');
 
 /* GET websites listing. */
 router.get('/', function(req, res, next) {
